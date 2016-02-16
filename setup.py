@@ -47,7 +47,6 @@ Magic: The Gathering SDK is a python wrapper around the MTG API located at magic
         'Natural Language :: English',
         'Operating System :: Unix',
         'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: Implementation :: PyPy',
         'Operating System :: OS Independent',
     ],
     packages=find_packages(),

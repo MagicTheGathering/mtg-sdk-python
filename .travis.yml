@@ -9,11 +9,10 @@ language: python
 
 python:
     - "3.4"
-    - "pypy"
 
 install:
     # install python requirements
-    - sudo make setup
+    - make setup
 
 script:
     # run tests
