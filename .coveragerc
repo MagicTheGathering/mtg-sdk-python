@@ -1,0 +1,22 @@
+# This file is part of mtgsdk.
+# https://github.com/MagicTheGathering/mtg-sdk-python
+
+# Licensed under the MIT license:
+# http://www.opensource.org/licenses/MIT-license
+# Copyright (c) 2016, Andrew Backes <backes.andrew@gmail.com>
+
+[run]
+omit =
+    *tests.py
+branch = True
+source =
+    mtgsdk
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    from urllib.parse import parse_qs
+    except ImportError:
