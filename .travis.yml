@@ -13,7 +13,7 @@ python:
 
 install:
     # install python requirements
-    - make setup
+    - sudo make setup
 
 script:
     # run tests
