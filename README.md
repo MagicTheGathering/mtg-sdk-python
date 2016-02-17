@@ -24,6 +24,70 @@ Import (Card and Set will be most used)
     from mtgsdk import Subtype
     from mtgsdk import Changelog
     
+### Properties Per Class
+
+#### Card
+
+    name
+    multiverse_id
+    layout
+    names
+    mana_cost
+    cmc
+    colors
+    type
+    supertypes
+    subtypes
+    rarity
+    text
+    flavor
+    artist
+    number
+    power
+    toughness
+    loyalty
+    variations
+    watermark
+    border
+    timeshifted
+    hand
+    life
+    reserved
+    release_date
+    starter
+    rulings
+    foreign_names
+    printings
+    original_text
+    original_type
+    legalities
+    source
+    image_url
+    set
+    id
+
+#### Set
+
+    code
+    name
+    gatherer_code
+    old_code
+    magic_cards_info_code
+    release_date
+    border
+    type
+    block
+    online_only
+    booster
+    mkm_id
+    mkm_name
+
+#### Changelog
+
+    version
+    release_date
+    details
+    
 ### Find Card by Multiverse Id
 
     card = Card.find(386616)
