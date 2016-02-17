@@ -61,3 +61,6 @@ docs/_build/
 
 # Fixtures
 fixtures/*.yaml
+
+# Pycharm stuff:
+.idea/
