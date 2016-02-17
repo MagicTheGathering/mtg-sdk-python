@@ -10,4 +10,5 @@ Python 3 is currently the only supported version for the sdk. More specifically,
 ## Installation
 
 Using pip:
+
     pip install mtgsdk
