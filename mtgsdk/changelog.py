@@ -11,14 +11,14 @@
 from mtgsdk.querybuilder import QueryBuilder
 
 class Changelog(object):
-	RESOURCE = 'changelogs'
-	
-	def __init__(self, response_dict={}):
-		self.id = response_dict.get('id')
-		self.version = response_dict.get('version')
-		self.details = response_dict.get('details')
-		self.release_date = response_dict.get('releaseDate')
+    RESOURCE = 'changelogs'
+    
+    def __init__(self, response_dict={}):
+        self.id = response_dict.get('id')
+        self.version = response_dict.get('version')
+        self.details = response_dict.get('details')
+        self.release_date = response_dict.get('releaseDate')
 
-	@staticmethod
-	def all():
-		return QueryBuilder(Changelog).all()
+    @staticmethod
+    def all():
+        return QueryBuilder(Changelog).all()

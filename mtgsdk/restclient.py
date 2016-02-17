@@ -14,29 +14,29 @@ from urllib.error import URLError, HTTPError
 from urllib.parse import urlencode
 
 class RestClient(object):
-	@staticmethod
-	def get(url, params={}):
-		"""Invoke an HTTP GET request on a url
-		
-		Args:
-			url (string): URL endpoint to request
-			params (dict): Dictionary of url parameters	
-		Returns:
-			dict: JSON response as a dictionary
-		"""
-		request_url = url
-		
-		if (len(params) > 0):
-			request_url = "{}?{}".format(url, urlencode(params))
+    @staticmethod
+    def get(url, params={}):
+        """Invoke an HTTP GET request on a url
+        
+        Args:
+            url (string): URL endpoint to request
+            params (dict): Dictionary of url parameters 
+        Returns:
+            dict: JSON response as a dictionary
+        """
+        request_url = url
+        
+        if (len(params) > 0):
+            request_url = "{}?{}".format(url, urlencode(params))
 
-		try:
-			req = Request(request_url, headers={ 'User-Agent': 'Mozilla/5.0' })
-			response = json.loads(urlopen(req).read().decode("utf-8"))
+        try:
+            req = Request(request_url, headers={ 'User-Agent': 'Mozilla/5.0' })
+            response = json.loads(urlopen(req).read().decode("utf-8"))
 
-			return response
-		except HTTPError as err:
-			raise MtgException(err.read())
-			
+            return response
+        except HTTPError as err:
+            raise MtgException(err.read())
+            
 class MtgException(Exception):
     def __init__(self, description):
         self.description = description

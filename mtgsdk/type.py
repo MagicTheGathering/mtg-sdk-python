@@ -11,8 +11,8 @@
 from mtgsdk.querybuilder import QueryBuilder
 
 class Type(object):
-	RESOURCE = 'types'
+    RESOURCE = 'types'
 
-	@staticmethod
-	def all():
-		return QueryBuilder(Type).array()
+    @staticmethod
+    def all():
+        return QueryBuilder(Type).array()

@@ -13,8 +13,8 @@ import unittest
 from mtgsdk import Type
 
 class TestType(unittest.TestCase):
-	def test_all_returns_types(self):
-		with vcr.use_cassette('fixtures/types.yaml'):
-			types = Type.all()
-			
-			self.assertEqual(["Artifact","Conspiracy","Creature","Enchantment","Instant","Land","Phenomenon","Plane","Planeswalker","Scheme","Sorcery","Tribal","Vanguard"], types)
+    def test_all_returns_types(self):
+        with vcr.use_cassette('fixtures/types.yaml'):
+            types = Type.all()
+            
+            self.assertEqual(["Artifact","Conspiracy","Creature","Enchantment","Instant","Land","Phenomenon","Plane","Planeswalker","Scheme","Sorcery","Tribal","Vanguard"], types)
