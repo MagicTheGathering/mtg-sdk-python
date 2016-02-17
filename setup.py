@@ -27,6 +27,7 @@ tests_require = [
 ]
 
 url='https://github.com/' + __github_username__ + '/' + __github_reponame__
+download_url="{}/tarball/{}".format(url, __version__)
 
 setup(
     name=__pypi_packagename__,
@@ -39,6 +40,7 @@ Magic: The Gathering SDK is a python wrapper around the MTG API located at magic
     author='Andrew Backes',
     author_email='backes.andrew@gmail.com',
     url=url,
+    download_url=download_url,
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
