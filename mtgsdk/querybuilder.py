@@ -70,15 +70,15 @@ class QueryBuilder(object):
         page = 0
         url = "{}/{}".format(__endpoint__, self.type.RESOURCE)
 
-        while(True):
-            page = page + 1
+        while True:
+            page += 1
             self.where(page=page)
             response = RestClient.get(url, self.params)[self.type.RESOURCE]
-            if (len(response) > 0):
+            if len(response) > 0:
                 for item in response:
                     list.append(self.type(item))
-                else:
-                    break
+            else:
+                break
 
         return list
         
