@@ -102,7 +102,7 @@ Import (Card and Set will be most used)
     
 ### Get all cards, but only a specific page of data
 
-    cards = Card.where(page=5).where(pageSize=1000).get()
+    cards = Card.where(page=5).where(pageSize=1000).all()
     
 ### Find a Set by code
 

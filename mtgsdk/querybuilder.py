@@ -67,16 +67,25 @@ class QueryBuilder(object):
             list of object: List of resource objects
         """
         list = []
-        page = 0
+        page = 1
+        fetch_all = True
         url = "{}/{}".format(__endpoint__, self.type.RESOURCE)
 
+        if 'page' in self.params:
+            page = self.params['page']
+            fetch_all = False
+
         while True:
-            page += 1
-            self.where(page=page)
             response = RestClient.get(url, self.params)[self.type.RESOURCE]
             if len(response) > 0:
                 for item in response:
                     list.append(self.type(item))
+
+                if not fetch_all:
+                    break
+                else:
+                    page += 1
+                    self.where(page=page)
             else:
                 break
 
