@@ -8,7 +8,7 @@
 # http://www.opensource.org/licenses/MIT-license
 # Copyright (c) 2016, Andrew Backes <backes.andrew@gmail.com>
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __pypi_packagename__ = "mtgsdk"
 __github_username__ = "MagicTheGathering"
 __github_reponame__ = "mtg-sdk-python"
