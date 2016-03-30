@@ -3,6 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/mtgsdk.svg)](https://badge.fury.io/py/mtgsdk)
 [![Build Status](https://travis-ci.org/MagicTheGathering/mtg-sdk-python.svg?branch=master)](https://travis-ci.org/MagicTheGathering/mtg-sdk-python)
 [![Code Climate](https://codeclimate.com/github/MagicTheGathering/mtg-sdk-python/badges/gpa.svg)](https://codeclimate.com/github/MagicTheGathering/mtg-sdk-python)
+[![Coverage Status](https://coveralls.io/repos/github/MagicTheGathering/mtg-sdk-python/badge.svg?branch=master)](https://coveralls.io/github/MagicTheGathering/mtg-sdk-python?branch=master)
 
 This is the Magic: The Gathering SDK Python implementation. It is a wrapper around the MTG API of [magicthegathering.io](http://magicthegathering.io/).
 
