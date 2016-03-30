@@ -17,3 +17,6 @@ install:
 script:
     # run tests
     - make test
+
+after_success:
+    - coveralls
