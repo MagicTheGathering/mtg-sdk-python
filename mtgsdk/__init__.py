@@ -16,4 +16,5 @@ from mtgsdk.subtype import Subtype
 from mtgsdk.type import Type
 from mtgsdk.changelog import Changelog
 from mtgsdk.restclient import RestClient
+from mtgsdk.restclient import MtgException
 from mtgsdk.querybuilder import QueryBuilder

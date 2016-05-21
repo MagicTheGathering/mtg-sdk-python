@@ -12,7 +12,7 @@ import vcr
 import unittest
 from mtgsdk import Set
 
-class TestCard(unittest.TestCase):
+class TestSet(unittest.TestCase):
     def test_find_returns_set(self):
         with vcr.use_cassette('fixtures/ktk.yaml'):
             set = Set.find('ktk')
@@ -31,3 +31,16 @@ class TestCard(unittest.TestCase):
             
             self.assertEqual(15, len(cards))
             self.assertEqual('KTK', cards[0].set)
+            
+    def test_where_filters_on_name(self):
+        with vcr.use_cassette('fixtures/filtered_sets.yaml'):
+            sets = Set.where(name='khans').all()
+            
+            self.assertEqual(1, len(sets))
+            self.assertEqual('KTK', sets[0].code)
+            
+    def test_all_returns_all_sets(self):
+        with vcr.use_cassette('fixtures/all_sets.yaml'):
+            sets = Set.all()
+
+            self.assertGreater(len(sets), 190)
