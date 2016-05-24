@@ -13,7 +13,7 @@ from mtgsdk import __version__, __pypi_packagename__, __github_username__, __git
 
 class TestConfig(unittest.TestCase):
     def test_has_proper_version(self):
-        self.assertEqual('1.1.0', __version__)
+        self.assertEqual('1.2.0', __version__)
         
     def test_has_proper_packagename(self):
         self.assertEqual('mtgsdk', __pypi_packagename__)
