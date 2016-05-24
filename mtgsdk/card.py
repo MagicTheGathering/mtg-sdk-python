@@ -48,6 +48,7 @@ class Card(object):
         self.source = response_dict.get('source')
         self.image_url = response_dict.get('imageUrl')
         self.set = response_dict.get('set')
+        self.set_name = response_dict.get('setName')
         self.id = response_dict.get('id')
         self.legalities = response_dict.get('legalities')
         self.rulings = response_dict.get('rulings')
