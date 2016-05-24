@@ -68,6 +68,7 @@ Import (Card and Set will be most used)
     source
     image_url
     set
+    set_name
     id
 
 #### Set
