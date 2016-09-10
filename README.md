@@ -1,5 +1,6 @@
 # Magic: The Gathering SDK
 
+[![mtg-developers on discord](https://img.shields.io/badge/discord-mtg%20developers-738bd7.svg)](https://discord.gg/qwGJNnP)
 [![PyPI version](https://badge.fury.io/py/mtgsdk.svg)](https://badge.fury.io/py/mtgsdk)
 [![Build Status](https://travis-ci.org/MagicTheGathering/mtg-sdk-python.svg?branch=master)](https://travis-ci.org/MagicTheGathering/mtg-sdk-python)
 [![Requirements Status](https://requires.io/github/MagicTheGathering/mtg-sdk-python/requirements.svg?branch=master)](https://requires.io/github/MagicTheGathering/mtg-sdk-python/requirements/?branch=master)
