@@ -47,7 +47,7 @@ class TestCard(unittest.TestCase):
                         .where(subtypes='elf,warrior') \
                         .all()
             
-            self.assertEqual(13, len(cards))
+            self.assertTrue(len(cards) >= 13)
             
     def test_all_with_page_returns_cards(self):
         with vcr.use_cassette('fixtures/all_first_page.yaml'):
