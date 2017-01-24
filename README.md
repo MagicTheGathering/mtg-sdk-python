@@ -28,7 +28,7 @@ Import (Card and Set will be most used)
     from mtgsdk import Supertype
     from mtgsdk import Subtype
     from mtgsdk import Changelog
-    
+
 ### Properties Per Class
 
 #### Card
@@ -88,56 +88,76 @@ Import (Card and Set will be most used)
     mkm_id
     mkm_name
 
+#### Language
+
+    Chinese Simplified
+    Chinese Traditional
+    French
+    German
+    Italian
+    Japanese
+    Korean
+    Portuguese (Brazil)
+    Russian
+    Spanish
+### How to get cards from specific language
+
+    Card.where(language="your_language").all()
+    Example:
+      card = Card.where(language="Chine Traditional").all()
+
+
+
 #### Changelog
 
     version
     release_date
     details
-    
+
 ### Find Card by Multiverse Id
 
     card = Card.find(386616)
-    
+
 ### Filter Cards via Query Parameters
 
     cards = Card.where(set='ktk').where(subtypes='warrior,human').all()
-    
+
 ### Get all cards (will page through all the data - could take awhile)
 
     cards = Card.all()
-    
+
 ### Get all cards, but only a specific page of data
 
     cards = Card.where(page=5).where(pageSize=1000).all()
-    
+
 ### Find a Set by code
 
     set = Set.find('ktk')
-    
+
 ### Get all sets
 
     sets = Set.all()
-    
+
 ### Filter sets via query parameters
 
     sets = Set.where(name='khans').all()
-    
+
 ### Get all types
 
     types = Type.all()
-    
+
 ### Get all subtypes
 
     subtypes = Subtype.all()
-    
+
 ### Get all supertypes
 
     supertypes = Supertype.all()
-    
+
 ### Get all changelogs
 
     changelogs = Changelog.all()
-    
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/mtg-sdk-python/fork )
