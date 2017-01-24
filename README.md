@@ -104,7 +104,7 @@ Import (Card and Set will be most used)
 
     Card.where(language="your_language").all()
     Example:
-      card = Card.where(language="Chine Traditional").all()
+      card = Card.where(language="Chinese Traditional").all()
 
 
 
