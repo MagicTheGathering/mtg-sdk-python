@@ -87,8 +87,11 @@ Import (Card and Set will be most used)
     booster
     mkm_id
     mkm_name
+    
+### How to get cards from specific language
 
-#### Language
+#### Languages
+Please note that a card may or may not be available in each language listed below.
 
     Chinese Simplified
     Chinese Traditional
@@ -100,19 +103,10 @@ Import (Card and Set will be most used)
     Portuguese (Brazil)
     Russian
     Spanish
-### How to get cards from specific language
 
     Card.where(language="your_language").all()
     Example:
       card = Card.where(language="Chinese Traditional").all()
-
-
-
-#### Changelog
-
-    version
-    release_date
-    details
 
 ### Find Card by Multiverse Id
 
@@ -153,10 +147,6 @@ Import (Card and Set will be most used)
 ### Get all supertypes
 
     supertypes = Supertype.all()
-
-### Get all changelogs
-
-    changelogs = Changelog.all()
 
 ## Contributing
 
