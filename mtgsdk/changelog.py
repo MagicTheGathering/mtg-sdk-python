@@ -10,6 +10,7 @@
 
 from mtgsdk.querybuilder import QueryBuilder
 
+
 class Changelog(object):
     RESOURCE = 'changelogs'
     

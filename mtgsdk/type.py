@@ -10,6 +10,7 @@
 
 from mtgsdk.querybuilder import QueryBuilder
 
+
 class Type(object):
     RESOURCE = 'types'
 

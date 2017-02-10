@@ -8,10 +8,10 @@
 # http://www.opensource.org/licenses/MIT-license
 # Copyright (c) 2016, Andrew Backes <backes.andrew@gmail.com>
 
-import json
 from mtgsdk.querybuilder import QueryBuilder
 from mtgsdk.config import __endpoint__
 from mtgsdk.card import Card
+
 
 class Set(object):
     RESOURCE = 'sets'
