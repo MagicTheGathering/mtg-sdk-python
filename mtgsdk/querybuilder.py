@@ -7,10 +7,9 @@
 # Licensed under the MIT license:
 # http://www.opensource.org/licenses/MIT-license
 # Copyright (c) 2016, Andrew Backes <backes.andrew@gmail.com>
-
-import json
 from mtgsdk.restclient import RestClient
 from mtgsdk.config import __endpoint__
+
 
 class QueryBuilder(object):
     def __init__(self, type):
@@ -41,7 +40,7 @@ class QueryBuilder(object):
         """
         list = []
         response = RestClient.get(url)[resource]
-        if (len(response) > 0):
+        if len(response) > 0:
             for item in response:
                 list.append(type(item))
 

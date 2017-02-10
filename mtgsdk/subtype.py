@@ -10,6 +10,7 @@
 
 from mtgsdk.querybuilder import QueryBuilder
 
+
 class Subtype(object):
     RESOURCE = 'subtypes'
 

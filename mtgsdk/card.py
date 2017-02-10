@@ -8,8 +8,8 @@
 # http://www.opensource.org/licenses/MIT-license
 # Copyright (c) 2016, Andrew Backes <backes.andrew@gmail.com>
 
-import json
 from mtgsdk.querybuilder import QueryBuilder
+
 
 class Card(object):
     RESOURCE = 'cards'
