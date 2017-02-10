@@ -10,8 +10,9 @@
 
 import json
 from urllib.request import Request, urlopen
-from urllib.error import URLError, HTTPError
+from urllib.error import HTTPError
 from urllib.parse import urlencode
+
 
 class RestClient(object):
     @staticmethod
@@ -26,17 +27,18 @@ class RestClient(object):
         """
         request_url = url
         
-        if (len(params) > 0):
+        if len(params) > 0:
             request_url = "{}?{}".format(url, urlencode(params))
 
         try:
-            req = Request(request_url, headers={ 'User-Agent': 'Mozilla/5.0' })
+            req = Request(request_url, headers={'User-Agent': 'Mozilla/5.0'})
             response = json.loads(urlopen(req).read().decode("utf-8"))
 
             return response
         except HTTPError as err:
             raise MtgException(err.read())
-            
+
+
 class MtgException(Exception):
     def __init__(self, description):
         self.description = description
