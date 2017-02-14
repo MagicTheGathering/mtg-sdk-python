@@ -12,6 +12,9 @@ import json
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 from urllib.parse import urlencode
+from mtgsdk.cache import APICache
+from mtgsdk.config import cache
+
 
 
 class RestClient(object):
@@ -25,16 +28,24 @@ class RestClient(object):
         Returns:
             dict: JSON response as a dictionary
         """
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        if not isinstance(cache, APICache):
+            raise ValueError('Provided cache must be subclass of APICache')
         request_url = url
         
         if len(params) > 0:
             request_url = "{}?{}".format(url, urlencode(params))
 
         try:
-            req = Request(request_url, headers={'User-Agent': 'Mozilla/5.0'})
-            response = json.loads(urlopen(req).read().decode("utf-8"))
+            cached = cache.get(request_url)
+            if cached:
+                return cached
+            else:
+                req = Request(request_url, headers=headers)
+                response = json.loads(urlopen(req).read().decode("utf-8"))
+                cache.put(request_url, response)
+                return response
 
-            return response
         except HTTPError as err:
             raise MtgException(err.read())
 
