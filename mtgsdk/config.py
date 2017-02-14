@@ -7,9 +7,12 @@
 # Licensed under the MIT license:
 # http://www.opensource.org/licenses/MIT-license
 # Copyright (c) 2016, Andrew Backes <backes.andrew@gmail.com>
+from mtgsdk.cache import FileCache
 
 __version__ = "1.2.0"
 __pypi_packagename__ = "mtgsdk"
 __github_username__ = "MagicTheGathering"
 __github_reponame__ = "mtg-sdk-python"
 __endpoint__ = "https://api.magicthegathering.io/v1"
+
+cache = FileCache(path='./tmp')
