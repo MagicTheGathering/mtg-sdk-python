@@ -16,6 +16,7 @@ from mtgsdk.cache import APICache
 from mtgsdk.config import cache
 
 
+
 class RestClient(object):
     @staticmethod
     def get(url, params={}):

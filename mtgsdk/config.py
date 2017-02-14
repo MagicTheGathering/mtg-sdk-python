@@ -16,3 +16,4 @@ __github_reponame__ = "mtg-sdk-python"
 __endpoint__ = "https://api.magicthegathering.io/v1"
 
 cache = FileCache(path='./tmp')
+
