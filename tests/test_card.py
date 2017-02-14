@@ -48,7 +48,19 @@ class TestCard(unittest.TestCase):
                         .all()
             
             self.assertTrue(len(cards) >= 13)
-            
+
+    def test_same_request_twice(self):
+        # this is used to test cache
+        with vcr.use_cassette('fixtures/legendary_elf_warriors.yaml'):
+            cards = Card.where(supertypes='legendary') \
+                .where(subtypes='elf,warrior') \
+                .all()
+            self.assertTrue(len(cards) >= 13)
+            cards = Card.where(supertypes='legendary') \
+                .where(subtypes='elf,warrior') \
+                .all()
+            self.assertTrue(len(cards) >= 13)
+
     def test_all_with_page_returns_cards(self):
         with vcr.use_cassette('fixtures/all_first_page.yaml'):
             cards = Card.where(page=1).all()
