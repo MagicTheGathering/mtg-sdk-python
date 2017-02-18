@@ -8,9 +8,7 @@
 # http://www.opensource.org/licenses/MIT-license
 # Copyright (c) 2016, Andrew Backes <backes.andrew@gmail.com>
 
-import sys, os
 from setuptools import setup, find_packages
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'mtgsdk'))
 from config import __version__, __pypi_packagename__, __github_username__, __github_reponame__
 
 tests_require = [
