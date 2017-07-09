@@ -40,6 +40,7 @@ Import (Card and Set will be most used)
     mana_cost
     cmc
     colors
+    color_identity
     type
     supertypes
     subtypes
