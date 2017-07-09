@@ -148,10 +148,14 @@ Please note that a card may or may not be available in each language listed belo
 
     supertypes = Supertype.all()
 
-## Contributing
+## Development
 
-1. Fork it ( https://github.com/[my-github-username]/mtg-sdk-python/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+### Linux
+
+1. Install dependencies: `make setup`
+2. Run test suite: `make test`
+
+### Windows
+
+1. Install dependencies: `python setup.py install`
+2. Run test suite: `python -m unittest discover tests/`

@@ -20,6 +20,7 @@ class Card(object):
         self.mana_cost = response_dict.get('manaCost')
         self.cmc = response_dict.get('cmc')
         self.colors = response_dict.get('colors')
+        self.color_identity = response_dict.get('colorIdentity')
         self.names = response_dict.get('names')
         self.type = response_dict.get('type')
         self.supertypes = response_dict.get('supertypes')

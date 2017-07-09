@@ -12,6 +12,10 @@ import vcr
 import unittest
 from mtgsdk import Card
 
+# Python 3.6 Workaround until https://github.com/kevin1024/vcrpy/issues/293 is fixed.
+vcr_connection_request = vcr.stubs.VCRConnection.request 
+vcr.stubs.VCRConnection.request = lambda *args, **kwargs: vcr_connection_request(*args)
+
 class TestCard(unittest.TestCase):
     def test_find_returns_card(self):
         with vcr.use_cassette('fixtures/choice_of_damnations.yaml'):
@@ -22,6 +26,7 @@ class TestCard(unittest.TestCase):
             self.assertEqual(6, card.cmc)
             self.assertEqual('Sorcery — Arcane', card.type)
             self.assertTrue('Black' in card.colors)
+            self.assertEqual(['B'], card.color_identity)
             self.assertTrue('Sorcery' in card.types)
             self.assertTrue('Arcane' in card.subtypes)
             self.assertEqual('Rare', card.rarity)
