@@ -65,7 +65,17 @@ class QueryBuilder(object):
         Returns:
             list of object: List of resource objects
         """
-        list = []
+        list = [x for x in self.iter()]
+
+        return list
+    
+    def iter(self):
+        """Gets all resources, automating paging through data
+        
+        Returns:
+            iterable of object: Iterable of resource objects
+        """
+        
         page = 1
         fetch_all = True
         url = "{}/{}".format(__endpoint__, self.type.RESOURCE)
@@ -78,7 +88,7 @@ class QueryBuilder(object):
             response = RestClient.get(url, self.params)[self.type.RESOURCE]
             if len(response) > 0:
                 for item in response:
-                    list.append(self.type(item))
+                    yield self.type(item)
 
                 if not fetch_all:
                     break
@@ -88,8 +98,8 @@ class QueryBuilder(object):
             else:
                 break
 
-        return list
-        
+        return
+    
     def array(self):
         """Get all resources and return the result as an array
 
