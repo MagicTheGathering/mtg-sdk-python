@@ -16,33 +16,26 @@ from mtgsdk.card import Card
 class Set(object):
     RESOURCE = 'sets'
 
-    def __init__(self, response_dict={}):
-        self.code = response_dict.get('code')
-        self.name = response_dict.get('name')
-        self.type = response_dict.get('type')
-        self.border = response_dict.get('border')
-        self.mkm_id = response_dict.get('mkm_id')
-        self.mkm_name = response_dict.get('mkm_name')
-        self.release_date = response_dict.get('releaseDate')
-        self.gatherer_code = response_dict.get('gathererCode')
-        self.magic_cards_info_code = response_dict.get('magicCardsInfoCode')
-        self.booster = response_dict.get('booster')
-        self.old_code = response_dict.get('oldCode')
-        self.block = response_dict.get('block')
-        self.online_only = response_dict.get('onlineOnly')
+    """Usual attributes :
+    block, booster, border, code, gatherer_code, magic_cards_info_code, mkm_id,
+    mkm_name, name, old_code, online_only, release_date, type.
+    See online docs for details."""
+
+    def __new__(cls, response_dict=dict()) :
+            return dict.__new__(__class__, response_dict)
 
     @staticmethod
     def find(id):
-        return QueryBuilder(Set).find(id)
+        return QueryBuilder(__class__).find(id)
 
     @staticmethod
     def where(**kwargs):
-        return QueryBuilder(Set).where(**kwargs)
+        return QueryBuilder(__class__).where(**kwargs)
 
     @staticmethod
     def all():
-        return QueryBuilder(Set).all()
-        
+        return QueryBuilder(__class__).all()
+
     @staticmethod
     def generate_booster(code):
         url = "{}/{}/{}/booster".format(__endpoint__, Set.RESOURCE, code)

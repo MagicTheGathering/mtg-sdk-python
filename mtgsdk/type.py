@@ -16,4 +16,4 @@ class Type(object):
 
     @staticmethod
     def all():
-        return QueryBuilder(Type).array()
+        return QueryBuilder(__class__).array()

@@ -18,9 +18,9 @@ class QueryBuilder(object):
 
     def find(self, id):
         """Get a resource by its id
-        
+
         Args:
-            id (string): Resource id    
+            id (string): Resource id
         Returns:
             object: Instance of the resource type
         """
@@ -30,7 +30,7 @@ class QueryBuilder(object):
 
     def find_many(self, url, type, resource):
         """Get a list of resources
-        
+
         Args:
             url (string): URL to invoke
             type (class): Class type
@@ -38,24 +38,17 @@ class QueryBuilder(object):
         Returns:
             list of object: List of resource instances
         """
-        list = []
-        response = RestClient.get(url)[resource]
-        if len(response) > 0:
-            for item in response:
-                list.append(type(item))
-
-        return list
+        return [type(item) for item in RestClient.get(url)[resource]]
 
     def where(self, **kwargs):
         """Adds a parameter to the dictionary of query parameters
-        
+
         Args:
             **kwargs: Arbitrary keyword arguments.
         Returns:
             QueryBuilder: Instance of the QueryBuilder
         """
-        for key, value in kwargs.items():
-            self.params[key] = value
+        self.params.update(kwargs)
 
         return self
 
@@ -65,17 +58,16 @@ class QueryBuilder(object):
         Returns:
             list of object: List of resource objects
         """
-        list = [x for x in self.iter()]
 
-        return list
-    
+        return list(self) # indirect calls of self.__iter__
+
     def iter(self):
         """Gets all resources, automating paging through data
-        
+
         Returns:
             iterable of object: Iterable of resource objects
         """
-        
+
         page = 1
         fetch_all = True
         url = "{}/{}".format(__endpoint__, self.type.RESOURCE)
@@ -84,22 +76,20 @@ class QueryBuilder(object):
             page = self.params['page']
             fetch_all = False
 
-        while True:
-            response = RestClient.get(url, self.params)[self.type.RESOURCE]
-            if len(response) > 0:
-                for item in response:
-                    yield self.type(item)
+        response = RestClient.get(url, self.params)[self.type.RESOURCE]
+        while len(response):
+            for item in response:
+                yield self.type(item)
 
-                if not fetch_all:
-                    break
-                else:
-                    page += 1
-                    self.where(page=page)
-            else:
+            if not fetch_all:
                 break
+            else:
+                page += 1
+                self.where(page=page)
+            response = RestClient.get(url, self.params)[self.type.RESOURCE]
 
-        return
-    
+    __iter__ = iter
+
     def array(self):
         """Get all resources and return the result as an array
 
