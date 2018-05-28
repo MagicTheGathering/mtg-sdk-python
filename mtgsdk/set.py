@@ -11,6 +11,7 @@
 from mtgsdk.querybuilder import QueryBuilder
 from mtgsdk.config import __endpoint__
 from mtgsdk.card import Card
+from string import ascii_uppercase, ascii_lowercase
 
 
 class Set(object):
@@ -21,8 +22,14 @@ class Set(object):
     mkm_name, name, old_code, online_only, release_date, type.
     See online docs for details."""
 
+    # some keys in the response_dict are of the form fooBarBaz ;
+    # we want them as foo_
+    trans = str.maketrans({u:"_"+l for u,l in zip(ascii_uppercase, ascii_lowercase)})
+
     def __new__(cls, response_dict=dict()) :
-            return dict.__new__(__class__, response_dict)
+        obj = object.__new__(__class__)
+        obj.__dict__ = {k.translate(__class__.trans):v for k,v in response_dict.items()}
+        return obj
 
     @staticmethod
     def find(id):
