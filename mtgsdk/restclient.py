@@ -15,19 +15,20 @@ from urllib.parse import urlencode
 
 
 class RestClient(object):
+
     @staticmethod
     def get(url, params={}):
         """Invoke an HTTP GET request on a url
-        
+
         Args:
             url (string): URL endpoint to request
-            params (dict): Dictionary of url parameters 
+            params (dict): Dictionary of url parameters
         Returns:
             dict: JSON response as a dictionary
         """
         request_url = url
-        
-        if len(params) > 0:
+
+        if len(params):
             request_url = "{}?{}".format(url, urlencode(params))
 
         try:

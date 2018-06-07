@@ -16,4 +16,4 @@ class Supertype(object):
 
     @staticmethod
     def all():
-        return QueryBuilder(Supertype).array()
+        return QueryBuilder(__class__).array()

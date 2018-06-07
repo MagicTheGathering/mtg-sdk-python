@@ -9,60 +9,40 @@
 # Copyright (c) 2016, Andrew Backes <backes.andrew@gmail.com>
 
 from mtgsdk.querybuilder import QueryBuilder
+from string import ascii_uppercase, ascii_lowercase
 
 
 class Card(object):
     RESOURCE = 'cards'
 
-    def __init__(self, response_dict={}):
-        self.name = response_dict.get('name')
-        self.layout = response_dict.get('layout')
-        self.mana_cost = response_dict.get('manaCost')
-        self.cmc = response_dict.get('cmc')
-        self.colors = response_dict.get('colors')
-        self.color_identity = response_dict.get('colorIdentity')
-        self.names = response_dict.get('names')
-        self.type = response_dict.get('type')
-        self.supertypes = response_dict.get('supertypes')
-        self.subtypes = response_dict.get('subtypes')
-        self.types = response_dict.get('types')
-        self.rarity = response_dict.get('rarity')
-        self.text = response_dict.get('text')
-        self.flavor = response_dict.get('flavor')
-        self.artist = response_dict.get('artist')
-        self.number = response_dict.get('number')
-        self.power = response_dict.get('power')
-        self.toughness = response_dict.get('toughness')
-        self.loyalty = response_dict.get('loyalty')
-        self.multiverse_id = response_dict.get('multiverseid')
-        self.variations = response_dict.get('variations')
-        self.watermark = response_dict.get('watermark')
-        self.border = response_dict.get('border')
-        self.timeshifted = response_dict.get('timeshifted')
-        self.hand = response_dict.get('hand')
-        self.life = response_dict.get('life')
-        self.release_date = response_dict.get('releaseDate')
-        self.starter = response_dict.get('starter')
-        self.printings = response_dict.get('printings')
-        self.original_text = response_dict.get('originalText')
-        self.original_type = response_dict.get('originalType')
-        self.source = response_dict.get('source')
-        self.image_url = response_dict.get('imageUrl')
-        self.set = response_dict.get('set')
-        self.set_name = response_dict.get('setName')
-        self.id = response_dict.get('id')
-        self.legalities = response_dict.get('legalities')
-        self.rulings = response_dict.get('rulings')
-        self.foreign_names = response_dict.get('foreignNames')
+    """Usual attributes :
+    artist, border, cmc, color_identity, colors, flavor, foreign_names, hand,
+    id, image_url, layout, legalities, life, loyalty, mana_cost, multiverse_id,
+    name, names, number, original_text, original_type, power, printings, rarity,
+    release_date, rulings, set, set_name, source, starter, subtypes, supertypes,
+    text, timeshifted, toughness, type, types, variations, watermark.
+    See online docs for details."""
+
+    # some keys in the response_dict are of the form fooBarBaz ;
+    # we want them as foo_bar_baz
+    trans = str.maketrans({u:"_"+l for u,l in zip(ascii_uppercase, ascii_lowercase)})
+
+    def __new__(cls, response_dict=dict()) :
+        obj = object.__new__(__class__)
+        response_dict = {k.translate(__class__.trans):v for k,v in response_dict.items()}
+        if "multiverseid" in response_dict.keys() : # one exception, to be fixed in mtgjson ?
+            response_dict["multiverse_id"] = response_dict.pop("multiverseid")
+        obj.__dict__ = response_dict
+        return obj
 
     @staticmethod
     def find(id):
-        return QueryBuilder(Card).find(id)
+        return QueryBuilder(__class__).find(id)
 
     @staticmethod
     def where(**kwargs):
-        return QueryBuilder(Card).where(**kwargs)
+        return QueryBuilder(__class__).where(**kwargs)
 
     @staticmethod
     def all():
-        return QueryBuilder(Card).all()
+        return QueryBuilder(__class__).all()

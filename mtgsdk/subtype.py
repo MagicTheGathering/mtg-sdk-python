@@ -16,4 +16,4 @@ class Subtype(object):
 
     @staticmethod
     def all():
-        return QueryBuilder(Subtype).array()
+        return QueryBuilder(__class__).array()

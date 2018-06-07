@@ -16,5 +16,5 @@ class TestType(unittest.TestCase):
     def test_all_returns_types(self):
         with vcr.use_cassette('fixtures/types.yaml'):
             types = Type.all()
-            
-            self.assertEqual(["Artifact","Conspiracy","Creature","Enchantment","Instant","Land","Phenomenon","Plane","Planeswalker","Scheme","Sorcery","Tribal","Vanguard"], types)
+
+            self.assertEqual(["Artifact","Conspiracy","Creature","Enchantment","Host","Instant","Land","Phenomenon","Plane","Planeswalker","Scheme","Sorcery","Tribal","Vanguard"], types)
