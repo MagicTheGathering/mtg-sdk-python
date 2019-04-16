@@ -88,7 +88,7 @@ Import (Card and Set will be most used)
     booster
     mkm_id
     mkm_name
-    
+
 ### How to get cards from specific language
 
 #### Languages
