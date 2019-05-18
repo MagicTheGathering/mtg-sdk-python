@@ -17,4 +17,4 @@ class TestSupertype(unittest.TestCase):
         with vcr.use_cassette('fixtures/supertypes.yaml'):
             supertypes = Supertype.all()
             
-            self.assertEqual(["Basic","Legendary","Ongoing","Snow","World"], supertypes)
+            self.assertEqual(["Basic","Host","Legendary","Ongoing","Snow","World"], supertypes)
