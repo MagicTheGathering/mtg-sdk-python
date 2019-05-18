@@ -44,7 +44,7 @@ class TestCard(unittest.TestCase):
             self.assertEqual("Target opponent chooses a number. You may have that player lose that much life. If you don't, that player sacrifices all but that many permanents.", card.original_text)
             self.assertEqual('Sorcery - Arcane', card.original_type)            
             self.assertTrue({"format":"Commander","legality":"Legal"} in card.legalities)
-            self.assertEqual('1c4aab072d52d283e902f2302afa255b39e0794b', card.id)
+            self.assertEqual('224a2a63-7be6-5e06-bf6b-e667727bf80b', card.id)
 
     def test_all_with_params_return_cards(self):
         with vcr.use_cassette('fixtures/legendary_elf_warriors.yaml'):
