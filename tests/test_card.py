@@ -42,7 +42,7 @@ class TestCard(unittest.TestCase):
             self.assertTrue({"name":"Scelta della Dannazione","text" : "L'avversario bersaglio sceglie un numero. Puoi far perdere a quel giocatore un ammontare di punti vita pari a quel numero. Se non lo fai, quel giocatore sacrifica tutti i permanenti tranne un numero di permanenti pari al numero scelto.","flavor" : "\"La vita è una sequela di scelte tra male e peggio.\"\n—Toshiro Umezawa","imageUrl":"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=105393&type=card","language":"Italian","multiverseid":105393} in card.foreign_names)
             self.assertTrue('SOK' in card.printings)
             self.assertEqual("Target opponent chooses a number. You may have that player lose that much life. If you don't, that player sacrifices all but that many permanents.", card.original_text)
-            self.assertEqual('Sorcery — Arcane', card.original_type)            
+            self.assertEqual('Sorcery - Arcane', card.original_type)            
             self.assertTrue({"format":"Commander","legality":"Legal"} in card.legalities)
             self.assertEqual('1c4aab072d52d283e902f2302afa255b39e0794b', card.id)
 
