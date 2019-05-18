@@ -33,7 +33,7 @@ class TestCard(unittest.TestCase):
             self.assertEqual('SOK', card.set)
             self.assertEqual('Saviors of Kamigawa', card.set_name)
             self.assertEqual("Target opponent chooses a number. You may have that player lose that much life. If you don't, that player sacrifices all but that many permanents.", card.text)
-            self.assertEqual("\"Life is a series of choices between bad and worse.\"\n—Toshiro Umezawa", card.flavor)
+            self.assertEqual("\"Life is a series of choices between bad and worse.\" —Toshiro Umezawa", card.flavor)
             self.assertEqual('Tim Hildebrandt', card.artist)
             self.assertEqual('62', card.number)
             self.assertEqual(88803, card.multiverse_id)
