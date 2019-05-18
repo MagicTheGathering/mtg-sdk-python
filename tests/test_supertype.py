@@ -17,4 +17,5 @@ class TestSupertype(unittest.TestCase):
         with vcr.use_cassette('fixtures/supertypes.yaml'):
             supertypes = Supertype.all()
             
+            #API currently misplaces Host among Supertypes instead of regular types, remove Host when API is updated
             self.assertEqual(["Basic","Host","Legendary","Ongoing","Snow","World"], supertypes)
