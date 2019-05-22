@@ -13,7 +13,7 @@ import unittest
 from mtgsdk import Card
 
 # Python 3.6 Workaround until https://github.com/kevin1024/vcrpy/issues/293 is fixed.
-vcr_connection_request = vcr.stubs.VCRConnection.request 
+vcr_connection_request = vcr.stubs.VCRConnection.request
 vcr.stubs.VCRConnection.request = lambda *args, **kwargs: vcr_connection_request(*args)
 
 class TestCard(unittest.TestCase):
@@ -42,7 +42,7 @@ class TestCard(unittest.TestCase):
             self.assertTrue({"name":"Scelta della Dannazione","language":"Italian","multiverseid":105393, "imageUrl":"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=105393&type=card"} in card.foreign_names)
             self.assertTrue('SOK' in card.printings)
             self.assertEqual("Target opponent chooses a number. You may have that player lose that much life. If you don't, that player sacrifices all but that many permanents.", card.original_text)
-            self.assertEqual('Sorcery — Arcane', card.original_type)            
+            self.assertEqual('Sorcery — Arcane', card.original_type)
             self.assertTrue({"format":"Commander","legality":"Legal"} in card.legalities)
             self.assertEqual('1c4aab072d52d283e902f2302afa255b39e0794b', card.id)
 
@@ -51,17 +51,17 @@ class TestCard(unittest.TestCase):
             cards = Card.where(supertypes='legendary') \
                         .where(subtypes='elf,warrior') \
                         .all()
-            
+
             self.assertTrue(len(cards) >= 13)
-            
+
     def test_all_with_page_returns_cards(self):
         with vcr.use_cassette('fixtures/all_first_page.yaml'):
             cards = Card.where(page=1).all()
-            
+
             self.assertEqual(100, len(cards))
-            
+
     def test_all_with_page_and_page_size_returns_card(self):
         with vcr.use_cassette('fixtures/all_first_page_one_card.yaml'):
             cards = Card.where(page=1).where(pageSize=1).all()
-            
+
             self.assertEqual(1, len(cards))

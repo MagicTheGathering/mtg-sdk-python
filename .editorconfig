@@ -1,0 +1,15 @@
+# EditorConfig: a universal project-level configuration file
+# See https://editorconfig.org/#download to get a plugin for your text editor or IDE
+
+root = true
+
+[*]
+indent_size = 4
+indent_style = space
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+end_of_line = lf
+
+[Makefile]
+indent_style = tab

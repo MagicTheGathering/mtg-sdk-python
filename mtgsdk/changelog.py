@@ -13,7 +13,7 @@ from mtgsdk.querybuilder import QueryBuilder
 
 class Changelog(object):
     RESOURCE = 'changelogs'
-    
+
     def __init__(self, response_dict={}):
         self.id = response_dict.get('id')
         self.version = response_dict.get('version')
