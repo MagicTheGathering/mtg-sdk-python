@@ -13,7 +13,7 @@ import unittest
 from mtgsdk import Card
 
 # Python 3.6 Workaround until https://github.com/kevin1024/vcrpy/issues/293 is fixed.
-vcr_connection_request = vcr.stubs.VCRConnection.request 
+vcr_connection_request = vcr.stubs.VCRConnection.request
 vcr.stubs.VCRConnection.request = lambda *args, **kwargs: vcr_connection_request(*args)
 
 class TestCard(unittest.TestCase):
@@ -51,15 +51,15 @@ class TestCard(unittest.TestCase):
             cards = Card.where(supertypes='legendary') \
                         .where(subtypes='elf,warrior') \
                         .all()
-            
+
             self.assertTrue(len(cards) >= 13)
-            
+
     def test_all_with_page_returns_cards(self):
         with vcr.use_cassette('fixtures/all_first_page.yaml'):
             cards = Card.where(page=1).all()
-            
+
             self.assertEqual(100, len(cards))
-            
+
     def test_all_with_page_and_page_size_returns_card(self):
         with vcr.use_cassette('fixtures/all_first_page_one_card.yaml'):
             cards = Card.where(page=1).where(pageSize=1).all()

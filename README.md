@@ -1,3 +1,5 @@
+[EditorConfig]: https://editorconfig.org/#download
+
 # Magic: The Gathering SDK
 
 [![mtg-developers on discord](https://img.shields.io/badge/discord-mtg%20developers-738bd7.svg)](https://discord.gg/qwGJNnP)
@@ -88,7 +90,7 @@ Import (Card and Set will be most used)
     booster
     mkm_id
     mkm_name
-    
+
 ### How to get cards from specific language
 
 #### Languages
@@ -150,6 +152,8 @@ Please note that a card may or may not be available in each language listed belo
     supertypes = Supertype.all()
 
 ## Development
+
+Install the [EditorConfig] plugin for your text editor or IDE
 
 ### Linux
 

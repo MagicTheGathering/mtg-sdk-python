@@ -15,5 +15,5 @@ class TestMtgException(unittest.TestCase):
     def test_constructor_sets_description(self):
         description = "An error has occurred"
         exception = MtgException(description)
-        
+
         self.assertEqual(description, exception.__str__())
