@@ -16,6 +16,6 @@ class TestSubtype(unittest.TestCase):
     def test_all_returns_subtypes(self):
         with vcr.use_cassette('fixtures/subtypes.yaml'):
             subtypes = Subtype.all()
-            
+
             self.assertTrue(len(subtypes) > 20)
             self.assertTrue('Warrior' in subtypes)
