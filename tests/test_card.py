@@ -33,18 +33,18 @@ class TestCard(unittest.TestCase):
             self.assertEqual('SOK', card.set)
             self.assertEqual('Saviors of Kamigawa', card.set_name)
             self.assertEqual("Target opponent chooses a number. You may have that player lose that much life. If you don't, that player sacrifices all but that many permanents.", card.text)
-            self.assertEqual("\"Life is a series of choices between bad and worse.\"\n—Toshiro Umezawa", card.flavor)
+            self.assertEqual("\"Life is a series of choices between bad and worse.\" —Toshiro Umezawa", card.flavor)
             self.assertEqual('Tim Hildebrandt', card.artist)
             self.assertEqual('62', card.number)
             self.assertEqual(88803, card.multiverse_id)
             self.assertEqual('http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=88803&type=card', card.image_url)
             self.assertTrue(len(card.rulings) > 0)
-            self.assertTrue({"name":"Scelta della Dannazione","language":"Italian","multiverseid":105393, "imageUrl":"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=105393&type=card"} in card.foreign_names)
+            self.assertTrue({"name":"Scelta della Dannazione","text" : "L'avversario bersaglio sceglie un numero. Puoi far perdere a quel giocatore un ammontare di punti vita pari a quel numero. Se non lo fai, quel giocatore sacrifica tutti i permanenti tranne un numero di permanenti pari al numero scelto.","flavor" : "\"La vita è una sequela di scelte tra male e peggio.\"\n—Toshiro Umezawa","imageUrl":"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=105393&type=card","language":"Italian","multiverseid":105393} in card.foreign_names)
             self.assertTrue('SOK' in card.printings)
             self.assertEqual("Target opponent chooses a number. You may have that player lose that much life. If you don't, that player sacrifices all but that many permanents.", card.original_text)
-            self.assertEqual('Sorcery — Arcane', card.original_type)
+            self.assertEqual('Sorcery - Arcane', card.original_type)            
             self.assertTrue({"format":"Commander","legality":"Legal"} in card.legalities)
-            self.assertEqual('1c4aab072d52d283e902f2302afa255b39e0794b', card.id)
+            self.assertEqual('224a2a63-7be6-5e06-bf6b-e667727bf80b', card.id)
 
     def test_all_with_params_return_cards(self):
         with vcr.use_cassette('fixtures/legendary_elf_warriors.yaml'):
@@ -63,5 +63,5 @@ class TestCard(unittest.TestCase):
     def test_all_with_page_and_page_size_returns_card(self):
         with vcr.use_cassette('fixtures/all_first_page_one_card.yaml'):
             cards = Card.where(page=1).where(pageSize=1).all()
-
+            
             self.assertEqual(1, len(cards))
