@@ -67,6 +67,6 @@ class TestCard(unittest.TestCase):
             self.assertEqual(1, len(cards))
 
     def test_iter_with_no_where_returns_card(self):
-        with vcr.use_cassette('fixtures/no_args_one_card.yaml'):
+        with vcr.use_cassette('fixtures/cards_no_args.yaml'):
             card = next(Card.iter())
             self.assertIsInstance(card, Card)
