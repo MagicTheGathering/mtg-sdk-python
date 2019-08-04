@@ -45,4 +45,10 @@ class Card(object):
 
     @staticmethod
     def all():
+        """Returns a list of all Card instances"""
         return QueryBuilder(__class__).all()
+
+    @staticmethod
+    def iter():
+        """Iterate over all Card instances"""
+        return QueryBuilder(__class__).iter()

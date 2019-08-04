@@ -1,0 +1,138 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.magicthegathering.io
+      User-Agent:
+      - Mozilla/5.0
+    method: GET
+    uri: https://api.magicthegathering.io/v1/cards?
+  response:
+    body:
+      string: "{\"cards\":[{\"name\":\"Abundance\",\"manaCost\":\"{2}{G}{G}\",\"cmc\":4.0,\"colors\":[\"Green\"],\"colorIdentity\":[\"G\"],\"type\":\"Enchantment\",\"supertypes\":[],\"types\":[\"Enchantment\"],\"subtypes\":[],\"rarity\":\"Rare\",\"set\":\"10E\",\"setName\":\"Tenth
+        Edition\",\"text\":\"If you would draw a card, you may instead choose land
+        or nonland and reveal cards from the top of your library until you reveal
+        a card of the chosen kind. Put that card into your hand and put all other
+        cards revealed this way on the bottom of your library in any order.\",\"artist\":\"Rebecca
+        Guay\",\"number\":\"249\",\"layout\":\"normal\",\"multiverseid\":130483,\"imageUrl\":\"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=130483&type=card\",\"rulings\":[{\"date\":\"2004-10-04\",\"text\":\"This
+        replacement effect replaces the draw, so nothing that triggers on a draw will
+        trigger.\"},{\"date\":\"2004-10-04\",\"text\":\"If you use this on a multi-card
+        draw, each replaced draw is handled separately. In other words, you reveal
+        and then put on the bottom of the library for the first card, then do the
+        same for the second, and so on. In a multi-card draw you do not have to choose
+        how many of those draws will be replaced before you do any drawing or use
+        of this card.\"},{\"date\":\"2004-10-04\",\"text\":\"If no card of the chosen
+        type is found before your library empties, you don\u2019t get a card, but
+        you do get to order all the cards in your library any way you choose.\"},{\"date\":\"2007-07-15\",\"text\":\"If
+        your library is empty, Abundance can prevent you from losing the game for
+        being unable to draw a card. If an effect or turn-based action would cause
+        you to draw a card, you can replace that draw with Abundance\u2019s replacement
+        effect. (It doesn\u2019t matter that you\u2019d be unable to actually draw
+        a card.) Since Abundance\u2019s effect has you put a card into your hand instead
+        of drawing a card, you\u2019ll never be forced to draw a card with an empty
+        library.\"}],\"foreignNames\":[{\"name\":\"\xDCberfluss\",\"text\":\"Falls
+        du eine Karte ziehen w\xFCrdest, kannst du stattdessen Land oder Nichtland
+        bestimmen und Karten oben von deiner Bibliothek aufdecken, bis du eine Karte
+        der bestimmten Art aufdeckst. Nimm diese Karte auf deine Hand und lege alle
+        anderen auf diese Weise aufgedeckten Karten in beliebiger Reihenfolge unter
+        deine Bibliothek.\",\"flavor\":null,\"imageUrl\":\"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=148402&type=card\",\"language\":\"German\",\"multiverseid\":148402},{\"name\":\"Abundancia\",\"text\":\"Si
+        fueras a robar una carta, en vez de eso, puedes elegir tierra o no tierra
+        y mostrar cartas de la parte superior de tu biblioteca hasta que muestres
+        una carta del tipo elegido. Pon esa carta en tu mano y pon todas las otras
+        cartas mostradas de esta manera en la parte inferior de tu biblioteca en cualquier
+        orden.\",\"flavor\":null,\"imageUrl\":\"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=150565&type=card\",\"language\":\"Spanish\",\"multiverseid\":150565},{\"name\":\"Abondance\",\"text\":\"Si
+        vous deviez piocher une carte, vous pouvez, \xE0 la place, choisir terrain
+        ou non-terrain et r\xE9v\xE9ler des cartes du dessus de votre biblioth\xE8que
+        jusqu'\xE0 ce que vous r\xE9v\xE9liez une carte du type choisi. Mettez cette
+        carte dans votre main, et mettez ensuite toutes les autres cartes r\xE9v\xE9l\xE9es
+        de cette mani\xE8re au-dessous de votre biblioth\xE8que, dans l'ordre de votre
+        choix.\",\"flavor\":null,\"imageUrl\":\"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=150182&type=card\",\"language\":\"French\",\"multiverseid\":150182},{\"name\":\"Abbondanza\",\"text\":\"Se
+        stai per pescare una carta, puoi invece scegliere terra o non terra e rivelare
+        carte dalla cima del tuo grimorio fino a che non riveli una carta del tipo
+        scelto. Aggiungi quella carta alla tua mano e metti tutte le altre carte rivelate
+        in questo modo in fondo al tuo grimorio in qualsiasi ordine.\",\"flavor\":null,\"imageUrl\":\"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=148785&type=card\",\"language\":\"Italian\",\"multiverseid\":148785},{\"name\":\"\u8C4A\u7A63\",\"text\":\"\u3042\u306A\u305F\u304C\u30AB\u30FC\u30C9\u3092\uFF11\u679A\u5F15\u304F\u5834\u5408\u3001\u4EE3\u308F\u308A\u306B\u3042\u306A\u305F\u306F\u571F\u5730\u304B\u571F\u5730\u3067\u306A\u3044\u304B\u3092\u9078\u3093\u3067\u3082\u3088\u3044\u3002\u305D\u3046\u3057\u305F\u306A\u3089\u3001\u3042\u306A\u305F\u306E\u30E9\u30A4\u30D6\u30E9\u30EA\u30FC\u306E\u4E00\u756A\u4E0A\u306E\u30AB\u30FC\u30C9\u3092\u3001\u9078\u3093\u3060\u7A2E\u985E\u306E\u30AB\u30FC\u30C9\u304C\u516C\u958B\u3055\u308C\u308B\u307E\u3067\u516C\u958B\u3057\u7D9A\u3051\u308B\u3002
+        \u305D\u306E\u30AB\u30FC\u30C9\u3092\u3042\u306A\u305F\u306E\u624B\u672D\u306B\u52A0\u3048\u3001\u3053\u308C\u306B\u3088\u308A\u516C\u958B\u3055\u308C\u305F\u4ED6\u306E\u3059\u3079\u3066\u306E\u30AB\u30FC\u30C9\u3092\u671B\u3080\u9806\u756A\u3067\u3042\u306A\u305F\u306E\u30E9\u30A4\u30D6\u30E9\u30EA\u30FC\u306E\u4E00\u756A\u4E0B\u306B\u7F6E\u304F\u3002\",\"flavor\":null,\"imageUrl\":\"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=148019&type=card\",\"language\":\"Japanese\",\"multiverseid\":148019},{\"name\":\"Abund\xE2ncia\",\"text\":\"Se
+        for comprar um card, em vez disso, voc\xEA pode escolher se deve ser ou n\xE3o
+        um terreno, e revelar cards do topo de seu grim\xF3rio at\xE9 revelar um card
+        do tipo escolhido. Coloque aquele card em sua m\xE3o e coloque todos os outros
+        cards revelados deste modo no fundo de seu grim\xF3rio em qualquer ordem.\",\"flavor\":null,\"imageUrl\":\"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=149799&type=card\",\"language\":\"Portuguese
+        (Brazil)\",\"multiverseid\":149799},{\"name\":\"\u0418\u0437\u043E\u0431\u0438\u043B\u0438\u0435\",\"text\":\"\u0415\u0441\u043B\u0438
+        \u0432\u044B \u0434\u043E\u043B\u0436\u043D\u044B \u0432\u0437\u044F\u0442\u044C
+        \u043A\u0430\u0440\u0442\u0443, \u0432\u043C\u0435\u0441\u0442\u043E \u044D\u0442\u043E\u0433\u043E
+        \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0432\u044B\u0431\u0440\u0430\u0442\u044C
+        \\\"\u0437\u0435\u043C\u043B\u044F\\\" \u0438\u043B\u0438 \\\"\u043D\u0435\u0437\u0435\u043C\u043B\u044F\\\"
+        \u0438 \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0442\u044C \u043A\u0430\u0440\u0442\u044B
+        \u0441 \u0432\u0435\u0440\u0445\u0430 \u0432\u0430\u0448\u0435\u0439 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438
+        \u0434\u043E \u0442\u0435\u0445 \u043F\u043E\u0440, \u043F\u043E\u043A\u0430
+        \u0432\u044B \u043D\u0435 \u043F\u043E\u043A\u0430\u0436\u0435\u0442\u0435
+        \u043A\u0430\u0440\u0442\u0443 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u0433\u043E
+        \u0432\u0438\u0434\u0430. \u041F\u043E\u043B\u043E\u0436\u0438\u0442\u0435
+        \u0442\u0443 \u043A\u0430\u0440\u0442\u0443 \u0432 \u0432\u0430\u0448\u0443
+        \u0440\u0443\u043A\u0443 \u0438 \u043F\u043E\u043B\u043E\u0436\u0438\u0442\u0435
+        \u0432\u0441\u0435 \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0435
+        \u043F\u043E\u043A\u0430\u0437\u0430\u043D\u043D\u044B\u0435 \u0442\u0430\u043A\u0438\u043C
+        \u043E\u0431\u0440\u0430\u0437\u043E\u043C \u043A\u0430\u0440\u0442\u044B
+        \u0432 \u043D\u0438\u0437 \u0432\u0430\u0448\u0435\u0439 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438
+        \u0432 \u043B\u044E\u0431\u043E\u043C \u043F\u043E\u0440\u044F\u0434\u043A\u0435.\",\"flavor\":null,\"imageUrl\":\"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=149416&type=card\",\"language\":\"Russian\",\"multiverseid\":149416},{\"name\":\"\u4E30\u8863\u8DB3\u98DF\",\"text\":\"\u82E5\u4F60\u5C06\u6293\u4E00\u5F20\u724C\uFF0C\u5219\u4F60\u53EF\u4EE5\u6539\u4E3A\u9009\u62E9\u5730\u724C\u6216\u975E\u5730\u724C\uFF0C\u5E76\u4ECE\u4F60\u724C\u5E93\u9876\u5F00\u59CB\u5C55\u793A\u724C\uFF0C\u76F4\u5230\u4F60\u5C55\u793A\u51FA\u4E00\u5F20\u8BE5\u79CD\u7C7B\u7684\u724C\u4E3A\u6B62\u3002
+        \u5C06\u8BE5\u724C\u7F6E\u4E8E\u4F60\u624B\u4E0A\uFF0C\u7136\u540E\u5C06\u4EE5\u6B64\u6CD5\u5C55\u793A\u7684\u5176\u5B83\u724C\u4EE5\u4EFB\u610F\u987A\u5E8F\u7F6E\u4E8E\u4F60\u7684\u724C\u5E93\u5E95\u3002\",\"flavor\":null,\"imageUrl\":\"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=147636&type=card\",\"language\":\"Chinese
+        Simplified\",\"multiverseid\":147636}],\"printings\":[\"10E\",\"C17\",\"DDR\",\"USG\"],\"originalText\":\"If
+        you would draw a card, you may instead choose land or nonland and reveal cards
+        from the top of your library until you reveal a card of the chosen kind. Put
+        that card into your hand and put all other cards revealed this way on the
+        bottom of your library in any order.\",\"originalType\":\"Enchantment\",\"legalities\":[{\"format\":\"Commander\",\"legality\":\"Legal\"},{\"format\":\"Duel\",\"legality\":\"Legal\"},{\"format\":\"Legacy\",\"legality\":\"Legal\"},{\"format\":\"Modern\",\"legality\":\"Legal\"},{\"format\":\"Vintage\",\"legality\":\"Legal\"}],\"id\":\"1669af17-d287-5094-b005-4b143441442f\"}]}"
+    headers:
+      CF-RAY:
+      - 50136c8c2fd65580-ORD
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - close
+      Content-Length:
+      - '6857'
+      Content-Type:
+      - application/json; charset=utf-8
+      Count:
+      - '1'
+      Date:
+      - Sun, 04 Aug 2019 20:54:02 GMT
+      Etag:
+      - W/"fc9bc66f18da4ff1c4e4ab5da5818382"
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Link:
+      - <https://api.magicthegathering.io/v1/cards?page=46434&pageSize=1>; rel="last",
+        <https://api.magicthegathering.io/v1/cards?page=2&pageSize=1>; rel="next"
+      Page-Size:
+      - '1'
+      Ratelimit-Limit:
+      - '1000'
+      Ratelimit-Remaining:
+      - '999'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cfduid=d4acee5e23c9ebcfd2dc8d30ff8e9a8c01564952040; expires=Mon, 03-Aug-20
+        20:54:00 GMT; path=/; domain=.magicthegathering.io; HttpOnly; Secure
+      Total-Count:
+      - '46434'
+      Vary:
+      - Origin
+      Via:
+      - 1.1 vegur
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 08ef7154-3185-4d05-a764-5d58e1809c13
+      X-Runtime:
+      - '0.019465'
+      X-Xss-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

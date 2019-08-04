@@ -42,7 +42,7 @@ class TestCard(unittest.TestCase):
             self.assertTrue({"name":"Scelta della Dannazione","text" : "L'avversario bersaglio sceglie un numero. Puoi far perdere a quel giocatore un ammontare di punti vita pari a quel numero. Se non lo fai, quel giocatore sacrifica tutti i permanenti tranne un numero di permanenti pari al numero scelto.","flavor" : "\"La vita è una sequela di scelte tra male e peggio.\"\n—Toshiro Umezawa","imageUrl":"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=105393&type=card","language":"Italian","multiverseid":105393} in card.foreign_names)
             self.assertTrue('SOK' in card.printings)
             self.assertEqual("Target opponent chooses a number. You may have that player lose that much life. If you don't, that player sacrifices all but that many permanents.", card.original_text)
-            self.assertEqual('Sorcery - Arcane', card.original_type)            
+            self.assertEqual('Sorcery - Arcane', card.original_type)
             self.assertTrue({"format":"Commander","legality":"Legal"} in card.legalities)
             self.assertEqual('224a2a63-7be6-5e06-bf6b-e667727bf80b', card.id)
 
@@ -63,5 +63,10 @@ class TestCard(unittest.TestCase):
     def test_all_with_page_and_page_size_returns_card(self):
         with vcr.use_cassette('fixtures/all_first_page_one_card.yaml'):
             cards = Card.where(page=1).where(pageSize=1).all()
-            
+
             self.assertEqual(1, len(cards))
+
+    def test_iter_with_no_where_returns_card(self):
+        with vcr.use_cassette('fixtures/no_args_one_card.yaml'):
+            card = next(Card.iter())
+            self.assertIsInstance(card, Card)
