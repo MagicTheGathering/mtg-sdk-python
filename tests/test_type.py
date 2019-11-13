@@ -19,5 +19,5 @@ class TestType(unittest.TestCase):
 
             #API returns some erroneous values, but this line is correct
             #Remove temporary line and uncomment this line when API is updated
-            #self.assertEqual(["Artifact","Card","Conspiracy","Creature","Emblem","Enchantment","Host","Instant","Land","Phenomenon","Plane","Planeswalker","Scheme","Sorcery","Summon","Tribal","Vanguard","You'll"], types)
-            self.assertEqual(["Artifact","Card","Conspiracy","Creature","Emblem","Enchantment","Hero","instant","Instant","Land","Phenomenon","Plane","Planeswalker","Scheme","Sorcery","Summon","Tribal","Vanguard","You’ll"], types)
+            # self.assertEqual(["Artifact","Card","Conspiracy","Creature","Emblem","Enchantment","Host","Instant","Land","Phenomenon","Plane","Planeswalker","Scheme","Sorcery","Summon","Tribal","Vanguard","You'll"], types)
+            self.assertEqual(["Artifact","Conspiracy","Creature","Enchantment","Hero","instant","Instant","Land","Phenomenon","Plane","Planeswalker","Scheme","Sorcery","Summon","Tribal","Vanguard","You’ll"], types)
